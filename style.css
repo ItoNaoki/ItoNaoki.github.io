@@ -1,0 +1,15 @@
+html {
+    background-image: url(img.jpg);
+    background-repeat: no-repeat;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
