@@ -1,11 +1,56 @@
 html {
-    background-image: url(img.jpg);
-    background-repeat: no-repeat;
+    font-family: "M PLUS Rounded 1c";
+}
+
+body {
+	margin: 0 auto;
+
+}
+
+.background {
+	background-image: url(img.jpg);
+	position: relative;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+.gradient {
+	background: linear-gradient(45deg, rgba(4,191,207,0.6), rgba(191,25,203,0.6));
+	background-size: 400% 400%;
+	height: 100vh;
+
+	-webkit-animation: test 4s ease infinite;
+	-moz-animation: test 4s ease infinite;
+	animation: test 4s ease infinite;
+}
+	@-webkit-keyframes test {
+	    0%{background-position:0% 51%}
+	    50%{background-position:100% 50%}
+	    100%{background-position:0% 51%}
+	}
+	@-moz-keyframes test {
+	    0%{background-position:0% 51%}
+	    50%{background-position:100% 50%}
+	    100%{background-position:0% 51%}
+	}
+	@keyframes test { 
+	    0%{background-position:0% 51%}
+	    50%{background-position:100% 50%}
+	    100%{background-position:0% 51%}
+	}
+
+
+#main {
+    margin-left: 20%;
+    font-size: 1.5em;
 }
 
 dt {
     font-weight: bold;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 a {
