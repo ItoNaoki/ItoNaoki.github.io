@@ -4,6 +4,7 @@
 <meta charset="utf-8"> 
 <meta neme="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="animate.css">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
 <body>
@@ -28,5 +29,20 @@
 </main>
 </div>
 </div>
+    
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquery.lettering.js"></script>
+<script src="jquery.textillate.js"></script>
+<script>
+$(function(){
+   $("h1,dt,dd").textillate({
+       in: {
+           effect: 'fadeInDown',
+           delayScale: 1.5,
+           shuffle: true
+       }
+    }); 
+});    
+</script>
 </body>
 </html>
