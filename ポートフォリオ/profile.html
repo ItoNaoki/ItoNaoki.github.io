@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"> 
+<meta neme="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/animate.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.textillate.js"></script>
+<script src="js/jquery.lettering.js"></script>
+</head>
+<body>
+    <header>
+        <div id="nav-toggle">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="gloval-nav">
+            <nav>
+                <ul class="snip1217">
+                    <li><a href="index.html">Top</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="profile">
+        <h2>Profile</h2>
+        <section>
+            <div id="profImg">
+                <img src="img/pro_0.jpg">
+            </div>
+            <h3 class="effect-fade">
+                <ruby>
+                    <rb>伊藤 直樹</rb>
+                    <rp>(</rp>
+                    <rt>いとう なおき</rt>
+                    <rp>)</rp>
+                </ruby>
+            </h3>
+            <div id="content">
+                <p class="effect-fade">1999年6月16日生まれ。</p>
+                <p class="effect-fade">盛岡情報ビジネス専門学校</p>
+                <p class="effect-fade">総合システム工学科</p>
+                <p class="effect-fade">WEBプログラマコース2年</p>
+                <p class="effect-fade">ITに少々興味があり、こういった分野の勉強をするにまで至りました。</p>
+                <p class="effect-fade">趣味は音楽鑑賞です。たまにアーティストのライブを観に行ったりもしています。</p>
+            </div>
+            <div id="skill">
+                <h4 class="effect-fade">SKILL</h4>
+                <ul>
+                    <li class="effect-fade">
+                        <div class="skillImg">
+                            <img src="img/html.png" alt="">
+                        </div>
+                        <p>HTML5</p>
+                    </li>
+                    <li class="effect-fade">
+                        <div class="skillImg">
+                            <img src="img/css.png" alt="">
+                        </div>
+                        <p>CSS3</p>
+                    </li>
+                    <li class="effect-fade">
+                        <div class="skillImg">
+                            <img src="img/php.png" alt="">
+                        </div>
+                        <p>PHP</p>
+                    </li>
+                    <li class="effect-fade">
+                        <div class="skillImg">
+                            <img src="img/js.png" alt="">
+                        </div>
+                        <p>Javascript</p>
+                    </li>
+                    <li class="effect-fade">
+                        <div class="skillImg">
+                            <img src="img/jquery.png" alt="">
+                        </div>
+                        <p>jquery</p>
+                    </li>
+                    <li class="effect-fade">
+                        <div class="skillImg">
+                            <img src="img/java.png" alt="">
+                        </div>
+                        <p>Java</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    
+        $(function () {
+        
+        // bodyにdivを追加
+        $('main').append('<div id="curtain">');
+        
+        // 追加したdivを塗りつぶしてから透明化アニメーション
+        $('#curtain').css({
+            position: 'absolute',
+            left: 0, top: 0,
+            width: '100%', height: '100%',
+            backgroundColor: '#fff',
+            opacity: 100
+        }).animate({
+            opacity: 0
+        }, 1000, function () {
+            // アニメーション終了後に自身を消す
+            $(this).remove();
+        });
+        
+        });
+        
+            $(function(){
+                $('h2').textillate({
+                    // ループのオンオフ、falseの場合、outは発動しない
+                    loop: false,
+        
+                    // テキストが置き換えられるまでの表示時間
+                    minDisplayTime: 3000,
+        
+                    // 遅延時間
+                    initialDelay: 20,
+        
+                    // アニメーションが自動的にスタートするかどうか
+                    autoStart: true,
+        
+                    // フェードインのエフェクトの詳細設定
+                    in: {
+                    // エフェクトの名前（animate.cssをご参照下さい）
+                    effect: 'bounceInDown',
+        
+                    // 遅延時間の指数
+                    delayScale: 3.5,
+        
+                    // 文字ごとの遅延時間
+                    delay: 20,
+        
+                    // trueにすることでアニメーションをすべての文字に同時に適用される
+                    sync: false,
+        
+                    // trueにすることで文字を順番にではなく、ランダムに入ってくるようにする
+                    // (注：syncがtrueの場合は無効になる)
+                    shuffle: false
+                    },
+        
+                    // フェードアウトのエフェクトの詳細設定(同上)
+                    out: {
+                    effect: 'hinge',
+                    delayScale: 1.5,
+                    delay: 50,
+                    sync: false,
+                    shuffle: false,
+                    }
+                });
+            });
+
+            $(function(){
+            　$(window).scroll(function (){
+                $('.effect-fade').each(function(){
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight){
+                        $(this).addClass('effect-scroll');
+                    }
+                });
+            　});
+            });
+
+            (function($) {
+                $(function () {
+                $('#nav-toggle').on('click', function() {
+                    $('body').toggleClass('open');
+                });
+                });
+            })(jQuery);
+
+
+
+            $(function() {
+            var $win = $(window),
+                $header = $('header'),
+                headerHeight = $header.outerHeight(),
+                startPos = 0;
+
+            $win.on('load scroll', function() {
+                var value = $(this).scrollTop();
+                if ( value > startPos && value > headerHeight ) {
+                $header.css('top', '-' + headerHeight + 'px');
+                } else {
+                $header.css('top', '0');
+                }
+                startPos = value;
+            });
+            });
+
+            var i = 1;
+            $(function(){
+                
+                setInterval(function(){
+                    // ～ここに処理を記載～
+                    
+                    $('#profImg img').attr('src','img/pro_'+i+'.jpg');
+                    i++;
+                    if(i==3){
+                        i = 0;
+                    }
+                },5000);
+            });
+
+            $(function(){
+                setInterval(function(){
+                    $("#profImg img").animate({
+                        opacity: "1"
+                    }, 1000).animate({
+                        opacity: "0"
+                    }, 4000);
+                });
+            });
+
+           
+        </script>
+</html>

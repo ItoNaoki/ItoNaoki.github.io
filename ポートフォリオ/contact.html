@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"> 
+<meta neme="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/animate.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.textillate.js"></script>
+<script src="js/jquery.lettering.js"></script>
+</head>
+<body id="contact">
+    <header>
+        <div id="nav-toggle">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="gloval-nav">
+            <nav>
+                <ul class="snip1217">
+                    <li><a href="index.html">Top</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+       <h2>Contact</h2>
+        <form action="" method="POST">
+            <dl>
+                <dt>Name</dt><dd><input type="name" required></dd>
+                <dt>Mail</dt><dd><input type="mail" required></dd>
+                <dt>Message</dt><dd><textarea required></textarea></dd>
+            </dl>
+            <div id="buttonBox">
+                <input type="submit" value="send" id="button">
+            </div>
+        </form>
+    </main>
+</body>
+<script>
+    
+        $(function () {
+        
+        // bodyにdivを追加
+        $('main').append('<div id="curtain">');
+        
+        // 追加したdivを塗りつぶしてから透明化アニメーション
+        $('#curtain').css({
+            position: 'absolute',
+            left: 0, top: 0,
+            width: '100%', height: '100%',
+            backgroundColor: '#fff',
+            opacity: 100
+        }).animate({
+            opacity: 0
+        }, 1000, function () {
+            // アニメーション終了後に自身を消す
+            $(this).remove();
+        });
+        
+        });
+        
+            $(function(){
+                $('h2').textillate({
+                    // ループのオンオフ、falseの場合、outは発動しない
+                    loop: false,
+        
+                    // テキストが置き換えられるまでの表示時間
+                    minDisplayTime: 3000,
+        
+                    // 遅延時間
+                    initialDelay: 20,
+        
+                    // アニメーションが自動的にスタートするかどうか
+                    autoStart: true,
+        
+                    // フェードインのエフェクトの詳細設定
+                    in: {
+                    // エフェクトの名前（animate.cssをご参照下さい）
+                    effect: 'bounceInDown',
+        
+                    // 遅延時間の指数
+                    delayScale: 3.5,
+        
+                    // 文字ごとの遅延時間
+                    delay: 20,
+        
+                    // trueにすることでアニメーションをすべての文字に同時に適用される
+                    sync: false,
+        
+                    // trueにすることで文字を順番にではなく、ランダムに入ってくるようにする
+                    // (注：syncがtrueの場合は無効になる)
+                    shuffle: false
+                    },
+        
+                    // フェードアウトのエフェクトの詳細設定(同上)
+                    out: {
+                    effect: 'hinge',
+                    delayScale: 1.5,
+                    delay: 50,
+                    sync: false,
+                    shuffle: false,
+                    }
+                });
+            });
+
+            (function($) {
+                $(function () {
+                $('#nav-toggle').on('click', function() {
+                    $('body').toggleClass('open');
+                });
+                });
+            })(jQuery);
+
+
+           
+        </script>
+</html>
